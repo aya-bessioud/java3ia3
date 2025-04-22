@@ -1,3 +1,5 @@
+import java.util.TreeSet;
+
 public class Main {
     public static void main(String[] args) {
         CompanyArrayList company = new CompanyArrayList();
@@ -20,5 +22,27 @@ public class Main {
         System.out.println("\nSorted by Department & Grade:");
         company.sortEmployeeByDepartementNameAndGrade();
         company.displayEmployee();
+
+
+        DepartmentHashset deptManager = new DepartmentHashset();
+
+        Department d1 = new Department(101, "IT", 30);
+        Department d2 = new Department(102, "HR", 20);
+        Department d3 = new Department(100, "Finance", 15);
+
+        deptManager.addDepartment(d1);
+        deptManager.addDepartment(d2);
+        deptManager.addDepartment(d3);
+
+        System.out.println("\nAll Departments:");
+        deptManager.displayDepartment();
+
+        System.out.println("\nSorted Departments by ID:");
+        TreeSet<Department> sortedDepartments = deptManager.sortDepartmentById();
+        for (Department d : sortedDepartments) {
+            System.out.println(d);
+        }
+
+        System.out.println("\nSearch Department by Name 'IT': " + deptManager.searchDepartment("IT"));
     }
 }
