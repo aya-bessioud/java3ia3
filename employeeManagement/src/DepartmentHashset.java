@@ -17,7 +17,7 @@ public class DepartmentHashset implements IDepartment<Department> {
     @Override
     public boolean searchDepartment(String name) {
         for (Department d : departments) {
-            if (d.getName().equalsIgnoreCase(name)) {
+            if (d.getName().equals(name)) {
                 return true;
             }
         }
